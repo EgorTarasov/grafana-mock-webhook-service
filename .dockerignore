@@ -1,0 +1,5 @@
+.git
+bin
+*_test.go
+README.md
+compose.yaml

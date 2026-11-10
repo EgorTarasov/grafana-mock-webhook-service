@@ -1,0 +1,14 @@
+services:
+  grafana-mock:
+    image: ghcr.io/egortarasov/grafana-mock-webhook-service:latest
+    ports:
+      - "3000:3000"
+    environment:
+      TARGET_URL: http://host.docker.internal:8080/webhooks/grafana
+      INTERVAL: 30s
+      # AUTO: "off"
+      # AUTH_HEADER: "Bearer change-me"
+      # AUTH_USER: grafana
+      # AUTH_PASSWORD: change-me
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
